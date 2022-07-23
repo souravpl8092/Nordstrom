@@ -4,87 +4,889 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Nordstorm</title>
 </head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    *{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        box-sizing:border-box
+    }
+    .main{
+        width: 98%;
+        margin-left: 15px;
+    }
+    a:hover {
+    font-weight: bolder;
+    }
+    /* ribon section */
+    .top-ribbon{
+        display: flex;
+        width: 100%;
+        height: 45px;
+        background-color: red;
+        color: white;
+        font-size: 14px;
+        text-align: center;
+        margin-top: -12px;
+    }
+    .top-ribbon a{
+        color: white;
+    }
+    .top-ribbon>div:first-child{
+        width: 90%;
+        margin-left: 80px;
+    }
+    .top-ribbon>div:nth-child(2){
+        width: 4%;
+    }
+    .top-ribbon>div:last-child{
+        width: 6%;
+        text-align: left;
+    }
+    .top-ribbon>div>img{
+        width: 50%;
+        border-radius: 50%;
+        margin-bottom: -20px;
+    }
+
+
+    
+    .heading{
+        display: flex;
+        width: 100%;
+        height: 75px;
+    }
+    .heading>div:nth-child(1){
+        width: 20%;
+    }
+    .heading>div:nth-child(2){
+        width: 80%;
+        margin-top: 1.5%;
+    }
+    .heading>div>:nth-child(1)>img{
+        width: 70%;
+        padding-top: 25px;
+    }
+    #cart>img{
+        width: 45%;
+        margin-left: 15px;
+    }
+    #search img{
+        width: 42px;
+    }
+    #inpt{
+        width: 700px;
+        height: 44px;
+        font-size: 15px;
+        font-weight: 100;
+        border: none;
+        border-color: #bbb;
+    }
+    .searchbar{
+        display: flex;
+    }
+    .searchicon{
+        display: flex;
+        border: 1px solid black;
+    }
+    .space{
+        width: 500px;
+    }
+
+    /* Navbar */
+
+    .navbarr{
+        display: flex;
+        padding: 20px;
+        margin: auto;
+        justify-content: space-between;
+        font-size: 14px;
+    }
+
+    /* Aniversary-Sales */
+    .aniversary-sales{
+        display: flex;
+        margin: auto;
+        margin-left: 20px;
+    }
+    .aniversary-sales>div:nth-child(1){
+        width: 70%;
+    }
+    .aniversary-sales img{
+        width: 100%;
+        height: 100%;
+    }
+    .aniversary-sales a{
+        color: black;
+    }
+    .aniversary-sales h1{
+        font-weight: bolder;
+        font-size: 40px;
+    }
+    .aniversary-sales>div:nth-child(2){
+        width: 30%;
+        padding: 100px 80px 20px 25px;
+        background-color: #ffeb3b;
+    }
+    .cat{
+        display: flex;
+        justify-content: space-between;  
+    }
+    .cat2{
+        display: flex;
+    }
+    .space2{
+        width: 40px;
+    }
+    .ht{
+        height: 10px;
+    }
+
+    /* Selection Clearance */
+    .selected{
+        display: flex;
+        height: 170px;
+        border: 30px solid rgb(235, 228, 228);
+        margin: 40px 0px;
+        border-radius: 2%;
+    }
+    .selected>div:nth-child(1){
+        width: 10%;
+    }
+    .selected>div:nth-child(2){
+        width: 30%;
+        font-size: 14px;
+        font-weight: bolder;
+        letter-spacing: -2px;
+    }
+    .selected>div:nth-child(3){
+        width: 60%;
+        padding: 30px;
+        font-size: 15px;
+        line-height: 30px;
+    }
+    .rd{
+        margin-top: -20px;
+        color: red;
+    }
+    #wd{
+        display: flex;
+    }
+    #wd>div>a{
+        color: black;
+    }
+    #wd1{
+        width: 10px;
+    }
+
+    /* Slideshow container */
+.slideshow-container {
+  max-width: 1300px;
+  position: relative;
+  margin: auto;
+
+}
+.mySlides {
+  display: none;
+}
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+.active, .dot:hover {
+  background-color: #717171;
+}
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+
+/* Aniversary best sellers */
+/* Container needed to position the overlay. Adjust the width as needed */
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+}
+
+/* Make the image to responsive */
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* The overlay effect - lays on top of the container and over the image */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: white; /* Black see-through */
+  color: #f1f1f1;
+  border: 1px solid black;
+  width: 100%;
+  transition: .5s ease;
+  opacity:0;
+  color: grey;
+  font-size: 14px;
+  padding: 15px;
+  text-align: center;
+}
+
+/* When you mouse over the container, fade in the overlay title */
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.best-sales{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    font-size: 12px;
+    margin-bottom: 80px;
+    justify-content: space-between;
+    gap: 10px 15px;
+}
+#besthead{
+    margin-top: 40px;
+    font-size: 22px;
+    color: rgb(29, 28, 28);
+}
+.best-sales img{
+    width: 100%;
+    height: 300px;
+}
+.checked {
+  color: orange;
+}
+#bd{
+    font-weight: bold;
+}
+
+/* 100+ FREE GIFTS WITH PURCHASE */
+.gift{
+    display: flex;
+    margin: auto;
+    margin-bottom: 80px;
+}
+.gift>div>img{
+    width: 100%;
+    height: 600px;
+}
+.gift>div:nth-child(1){
+    width: 65%;
+}
+.gift>div:nth-child(2){
+width: 35%;
+padding: 100px 50px 20px 15px;
+background-color: #ffeb3b;
+}
+.gift h2{
+    font-weight: bolder;
+}
+.gift p{
+    font-size: 15px;
+}
+.gift a{
+    color: black;
+}
+
+/* SHOP ANNIVERSARY SALE */
+.shop{
+    display: flex;
+    margin: 60px 0px 110px;
+    gap:10px;
+    text-align: center;
+}
+.shop img:hover {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+.shop h4:hover{
+    font-size: 15px;
+    color: blue;
+}
+.shop>div img{
+    width: 100%;
+    height: 100%;
+    margin-left: 10px;
+}
+.shophead>h2{
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* RSVP-WORTHY EVENTS */
+.event{
+    display: flex;
+    width: 100%;
+    gap: 20px 20px;
+    justify-content: center;
+    text-align: left;
+    font-size: 14px;
+    margin-bottom: 50px;
+
+}
+.event img{
+    margin-left:-70px ;
+    width: 125%;
+    height: 480px;
+}
+.event>div>div{
+    width: 80%;
+ 
+    margin-top: -10px;
+
+}
+.event a{
+    color: black;
+}
+#wdth{
+    width: 100px;
+}
+
+/* Nordy */
+.nordy{
+    display: flex;
+    background-color:#f5f5f5;
+    border-radius: 2%;
+    height: 150px;
+    margin-bottom: 80px;
+}
+.dark{
+    border: 1px solid black;
+}
+.nordy>div:nth-child(2){
+    width: 90%;
+    margin-left: 80px;
+    margin-top: 10px;
+}
+#nor1>img{
+    width: 50%;
+    margin-top: 50px;
+    margin-left: 120px;
+}
+#nor2>img{
+    width: 60%;
+    margin-left: 30px;
+    margin-top:20px ;
+}
+.nordy a{
+    color: black;
+}
+
+/* NEW & NOTEWORTHY */
+.new{
+    display: flex;
+    font-size: 14px;
+}
+#worhead{
+    text-align: center;
+    font-size: 22px;
+    margin: 50px 0px;
+    font-weight: 500;
+}
+.new img:hover{
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+.new img{
+    width: 100%;
+    height: 600px;
+}
+.new{
+    display: flex;
+    margin: auto;
+    margin-bottom: 80px;
+}
+
+.new>div:nth-child(1){
+    width: 65%;
+}
+.new>div:nth-child(2){
+width: 35%;
+height: 400px;
+padding: 100px 50px 20px 15px;
+}
+.new h2{
+    font-weight: bolder;
+}
+.new p{
+    font-size: 15px;
+}
+.new a{
+    color: black;
+}
+
+/* TRENDING NOW */
+.trend{
+    display: flex;
+    margin-bottom: 50px;
+}
+.top img{
+    width: 90%;
+    margin-left: 35px;
+}
+.mid img{
+    width: 107%;
+    margin-left: 18px;
+}
+.buttom img{
+    width: 74%;
+    margin-left: 80px;
+}
+#trendh {
+    text-align: center;
+    margin-bottom: 60px;
+    margin-top: 50px;
+    font-weight: 400;
+}
+.trend a{
+    color: black;
+}
+.top+div{
+    width: 80%;
+    margin-left: 38px;
+    font-size: 14px;
+}
+.top+div>div{
+    display: flex;
+    margin-top: -20px;
+}
+#wid{
+    width: 10px;
+}
+.mid+div{
+    width: 100%;
+    margin-left: 20px;
+    font-size: 14px;
+}
+.mid+div>div{
+    display: flex;
+    margin-top: -20px;
+}
+.buttom+div{
+    width: 80%;
+    margin-left: 85px;
+    font-size: 14px;
+}
+.buttom+div>div{
+    display: flex;
+    margin-top: -10px;
+}
+#wid{
+    width: 10px;
+}
+
+/* We think you’ll love these */
+#wehead{
+    font-size: 22px;
+    font-weight: 600;
+}
+#wehead+p{
+    font-size: 14px;
+    margin: -10px 0px 30px 0px;
+}
+.strike{
+      text-decoration: line-through;
+    }
+.rd{
+    color: #f44343;
+    margin-top: 8px;
+}
+
+/* DESIGNER CLEARANCE */
+.design{
+    display: flex;
+}
+.design>div:nth-child(1){
+    background-color: #ff3d00;
+    color: white;
+    width: 65%;
+    height: 560px;
+    text-align: center;
+    justify-content: center;
+    padding-top: 200px;
+    margin-left: 20px;
+    margin-bottom: 50px;
+}
+.design>div:nth-child(2){
+    margin-top: 120px;
+    margin-left: 20px;
+}
+.design a{
+    color: black;
+}
+.design>div:nth-child(2)>h2+p{
+    margin: -10px 0px -1px 0px;
+}
+
+/* NORDY POD */
+.nordypod{
+    display: flex;
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+    margin-bottom: 50px;
+    margin-top: 150px;
+}
+.nordypod img{
+    width: 95%; 
+}
+.nordypod>div:nth-child(1){
+    width: 12%;
+    border: 1px solid black;
+    background-color: black;
+}
+.nordypod>div:nth-child(2){
+    width: 88%;
+    border: 1px solid black;
+    font-size: 12px;
+    margin-left: 20px;
+}
+.nordypod a{
+    color: white;
+    font-size: 15px;
+}
+
+/* Pick Up Today */
+.pickup{
+    display: flex;
+    background-color: #eeeeee;
+    height: 155px;
+}
+.pickup img{
+    width: 50%;
+    margin-top: 40px;
+}
+#orange{
+    border: 3px solid orangered;
+    margin-top: -7px;
+}
+.pickup>div:nth-child(1){
+    width: 40%;
+    text-align: right;
+    margin: 40px;
+    font-size: 19px;
+}
+.pickup>div:nth-child(2){
+    width: 10%;
+    margin-right: -20px;
+}
+.pickup>div:nth-child(3){
+    width: 40%;
+    margin: 40px;
+    font-size: 14px;
+}
+.pickup a{
+    color: black;
+}
+
+/* SHOP BY CATEGORY */
+.shopbycat{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    gap: 10px 10px;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 40px;
+}
+#shopheading{
+    text-align: center;
+    margin: 50px 0px;
+    font-weight: 500;
+}
+
+.shopbycat>div:nth-child(1) img{
+    width: 100%;
+    height: 265px;
+    margin-left: 15px;
+}
+.shopbycat>div:nth-child(2) img{
+    width: 100%;
+    height: 265px;
+}
+.shopbycat>div:nth-child(3) img{
+    width: 100%;
+    height: 265px;
+}
+.shopbycat>div:nth-child(4) img{
+    width: 100%;
+    height: 265px;
+}
+.shopbycat>div:nth-child(5) img{
+    width: 100%;
+    height: 265px;
+}
+.shopbycat>div:nth-child(6) img{
+    width: 100%;
+    height: 265px;
+    margin-right: 20px;
+}
+
+/* CURRENTLY LOVING */
+.containerr {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.containerr:hover .image {
+  opacity: 0.5;
+}
+
+.containerr:hover .middle {
+  opacity: 1;
+}
+
+.text {
+ width: 200px;
+  color:rgb(1, 1, 24);
+  font-size: 20px;
+  font-weight: bolder;
+  padding: 16px -252px;
+}
+.curloving{
+    display: flex;
+    gap: 0px 10px;
+}
+.lovhead{
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+}
+.lovhead+p{
+    text-align: center;
+    font-size: 15px;
+    margin: -10px 0px 60px 0px;
+}
+.curloving img{
+    width: 100%;
+    height: 350px;
+}
+
+/* footer */
+#india{
+    display: flex;
+}
+#india img{
+    border-radius: 50%;
+    width: 50%;
+    margin-top: 15px;
+    margin-right: 20px;
+
+}
+.footer{
+    display: grid;
+    grid-template-columns: 12% 15% 15% 12% 12% 25%;
+    background-color:#eeeeee;
+    font-size: 14px;
+    word-wrap: break-word;
+    padding-right: 20px;
+    gap: 5px 10px;
+    padding-top: 20px;
+    width: 100%;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+.tab{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    font-weight: 400;
+}
+.tab img{
+    margin-top: 10px;
+    width: 50%;
+}
+.social{
+    display: flex;
+    width: 50%
+}
+.social img{
+    width: 70%;
+    margin-top: 28px;
+}
+.footb{
+    display: flex;
+    width: 1000px;
+    font-size: 12px;
+    background-color:#eeeeee;
+    margin-bottom: -50px;
+}
+.footbt{
+    display: flex;
+    gap: 0px 30px;
+}
+button{
+    border: none;
+    background-color: white;
+}
+button:hover{
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+}
+.footer p:hover{
+    font-weight: bold;
+    background-color: black;
+    color: white;
+}
+.footer img:hover {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+.shopbycat img:hover {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+.shopbycat h4:hover{
+    font-size: 15px;
+    color: blue;
+}
+</style>
 <body>
+    
 
     <!-- ribon section -->
-    <div class=" top-ribbon">
-        <p>Get an extra 25% off selected clearance through July 24. <a href="">Shop Now</a> <a href="">Exclusions & Restrictions</a></p>
-        <img src="https://n.nordstrommedia.com/alias/IN.gif" alt=""><p>India</p>
+    <div class="top-ribbon">
+        <div>
+            <p>Get an extra 25% off selected clearance through July 24. <a href="">Shop Now</a> <a href="">Exclusions & Restrictions</a></p>
+        </div>
+        <div><img src="https://cdn.britannica.com/97/1597-004-05816F4E/Flag-India.jpg" alt=""></div>
+        <div><p>India</p></div>
     </div>
 
     <!-- searchbar -->
+    <div class="main">
     <div class="heading">
         <div>
-            <img src="file:///E:/Masai%20School/New%20folder%20(2)/n.nordstrommedia.com/alias/nordstrom-logo.svg" alt="">
+            <a href="https://imgbb.com/"><img src="https://i.ibb.co/b339446/Nord-Storm.png" alt="Nord-Storm" border="0"></a>
         </div>
         <div>
-            <div>
-                <div>
-                    <img src="https://www.maytag.ca/content/maytagv2/en_ca/blog/kitchen/how-to-change-an-oven-light/_jcr_content/root/main/responsivegrid/gridlayout_936280951_33341659/mainImg.coreimg.png/1597773880166/locate-bulb.png" alt="">
+            <div class="searchbar">
+                <div class="searchicon">
+                    <div id="search">
+                        <img src="https://www.maytag.ca/content/maytagv2/en_ca/blog/kitchen/how-to-change-an-oven-light/_jcr_content/root/main/responsivegrid/gridlayout_936280951_33341659/mainImg.coreimg.png/1597773880166/locate-bulb.png" alt="">
+                    </div>
+                    <div>
+                        <input type="text" id="inpt" name="search" placeholder="Search for product or brands">
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                    </div>
                 </div>
-                <div>
-                    <input type="text" placeholder="Search for product or brands">
-                </div>
+                
+                <div class="space"></div>
                 <div>Hi, Sourav</div>
-                <div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKwiuwYQxIVujiW5prErv1iA20oLYBWKYhbw&usqp=CAU" alt="">
+                <div id="cart"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKwiuwYQxIVujiW5prErv1iA20oLYBWKYhbw&usqp=CAU" alt="">
                 </div>
             </div>
         </div>
     </div>
     
         <!-- Navbar section -->
-    <hr>
-    <div>
-        <div>Anniversary Sale</div>
-        <div>Women</div>
-        <div>Men</div>
-        <div>Kids</div>
-        <div>Young Adult</div>
-        <div>Activewear</div>
-        <div>Home</div>
-        <div>Beauty</div>
-        <div>Designer</div>
-        <div>Gifts</div>
-        <div>Sale</div>
-        <div>Brands</div>
+    <hr id="light">
+    <div class="navbarr">
+        <button style="background-color:yellow;">Anniversary Sale</button>
+        <button>Women</button>
+        <button>Men</button>
+        <button>Kids</button>
+        <button>Young Adult</button>
+        <button >Activewear</button>
+        <button >Home</button>
+        <button >Beauty</button>
+        <button >Designer</button>
+        <button >Gifts</button>
+        <button  style="color: red;">Sale</button>
+        <button >Brands</button> 
     </div>
 
         <!-- Happy Aniversary Sales Section -->
-    <div>
+    <div class="aniversary-sales">
         <div>
-            <a href="https://ibb.co/r0cCkq6"><img src="https://i.ibb.co/C8MkB47/b03db26f-23f4-409d-92ca-b5faa346fe68.webp" alt="b03db26f-23f4-409d-92ca-b5faa346fe68" border="0"></a>
+            <a href="https://ibb.co/DYZFydP"><img src="https://i.ibb.co/C6fyZLp/d6e626cd-9f0b-41e5-8622-acf135347c37.jpg" alt="d6e626cd-9f0b-41e5-8622-acf135347c37" border="0"></a>
         </div>
         <div>
-            <h1>IT'S ON!</h1><br>
-            <p>Pick up today in store or curbside.</p><br>
+            <h1><b>IT'S ON!</b></h1>
+            <p>Pick up today in store or curbside.</p>
             <p><a href="">Get Inspired</a></p>
-            <p>Shop Now:</p>
-            <p><a href=""></a>women</p>
-            <p><a href=""></a>Men</p>
-            <p><a href=""></a>Activewear</p>
-            <p><a href=""></a>Kids</p>
-            <p><a href=""></a>Home</p>
-            <p><a href=""></a>Beauty Exclusives</p>
-            <p><a href=""></a>All</p>
+            <div class="ht"></div>
+            <div><p>Shop Now:</p></div>
+            
+            <div class="cat">
+                <div><p><a href="">women</a></p></div>
+                <div><p><a href="">Men</a></p></div>
+                <div><p><a href="">Activewear</a></p></div>
+                <div><p><a href="">Kids</a></p></div>
+                <div><p><a href="">Home</a></p></div>
+            </div>
+            <div class="cat2">
+                <div><p><a href="">Beauty Exclusives</a></p></div>
+                <div class="space2"></div>
+                <div><p><a href="">All</a></p></div>
+            </div> 
         </div>
     </div>
 
     <!-- Selection Clearance Extra 25% Off -->
-    <div>
+    <div class="selected">
+        <div></div>
         <div>
-            <div>SELECTED CLEARANCE</div>
-            <div>EXTRA 25% OFF</div>
+            <div><h1>SELECTED CLEARANCE</h1></div>
+            <div class="rd"><h1>EXTRA 25% OFF</h1></div>
         </div>
         <div>
             <div>Online and in store through July 24-hurry, the best deals go fast. Exclusions apply.</div>
-            <div><a href="">Sale</a><a href=""></a>Exclusions & Restrictions</div>
+            <div id="wd">
+                <div><a href="">Sale</a></div>
+                <div id="wd1"></div>
+                <div><a href="">Exclusions & Restrictions</a></div>
+            </div>
         </div>
     </div>
         
     <!-- sliding image section -->
-    <div>
+   <!--  <div>
         <div>
             <div>
                 <div>
@@ -117,91 +919,223 @@
                 <div>
                     <h4>ANIVERSARY SALES</h4><br>
                     <h2>A BOLD MOVE</h2>
-                    <p>New-season shoes add the wow factor to your walk.</p>
+                    <p>Save big on repeat-worthy staples.</p>
                     <p>women: </p>
                     <p><a href="">Boots</a><a href="">Heels</a><a href="">Sneakers</a><a href="">All Shoes</a></p>
                 </div>
             </div>
         </div>     
-    </div>
+    </div> -->
+  
+    <!-- Slideshow container --> 
+<div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+    <div class="numbertext"></div>
+    <img src="https://i.ibb.co/pxCPpS5/4ac9b844-6c29-4b54-b089-a71b7ab6c29a.jpg" style="width:100%">
+    <div class="text"></div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext"></div>
+    <img src="https://i.ibb.co/ZmbryNy/5c95199d-2d5c-4ade-a136-7e575ed09f28.jpg" style="width:100%">
+    <div class="text"></div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext"></div>
+    <img src="https://i.ibb.co/SRPYzTh/4d29c8d6-56f6-45ac-ad0e-63636291d4be.jpg" style="width:100%">
+    <div class="text"></div>
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
 
     <!-- Aniversary best sellers -->
+    <h2 id="besthead">Anniversary best sellers</h2>
+    <div class="best-sales">
+        <div>
+            <div class="container">
+            <img src="https://m.media-amazon.com/images/I/41-KNRTGwXL._UX569_.jpg" alt="Avatar" class="image">
+            <div class="overlay">Quick View</div>
+            </div>
+            <p id="bd">Aniversary Sale</p>
+            <p>Chantelle Lingeric</p>
+            <p id="bd">Sale : INR 1,254.62</p>
+            <p>After Sale: INR 1,684.06</p>          
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+        </div>
+        <div>
+            <div class="container">
+            <img src="https://n.nordstrommedia.com/id/sr3/d92b5b12-db6c-46d9-b82d-daf87e4a481e.jpeg?crop=pad&pad_color=FFF&format=jpeg&w=780&h=1196" alt="Avatar" class="image">
+            <div class="overlay">Quick View</div>
+            </div>
+            <p id="bd">Aniversary Sale</p>
+            <p>True & co.</p>
+            <p id="bd">Sale : INR 2,433.47</p>
+            <p>After Sale: INR 1,684.06</p>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+        </div>
+        <div>
+            <div class="container">
+            <img src="https://u-mercari-images.mercdn.net/photos/m83987476924_1.jpg?width=1024&height=1024&format=pjpg&auto=webp&fit=crop&_=1657260907" alt="Avatar" class="image">
+            <div class="overlay">Quick View</div>
+            </div>
+            <p id="bd">Aniversary Sale</p>
+            <p>Caslon</p>
+            <p id="bd">Sale : INR 5,885.79</p>
+            <p>After Sale: INR 8,416.09</p>         
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+        </div>
+        <div>
+            <div class="container">
+            <img src="https://cdn.shopify.com/s/files/1/0564/0598/3384/products/EBJ0239-PJ1018SN-GASP-F.jpg?v=1631477527" alt="Avatar" class="image">
+            <div class="overlay">Quick View</div>
+            </div>
+            <p id="bd">Aniversary Sale</p>
+            <p>Nordstrom</p>
+            <p id="bd">Sale : INR 3,443.90</p>
+            <p>After Sale: INR 4,967.68</p>          
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+        </div>
+        <div>
+            <div class="container">
+            <img src="https://s.yimg.com/ny/api/res/1.2/VrylBG4fLsEDoCG2arztOg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtjZj13ZWJw/https://itk-assets.nyc3.cdn.digitaloceanspaces.com/2021/07/black-spanx-faux-leather-leggings.jpg" alt="Avatar" class="image">
+            <div class="overlay">Quick View</div>
+            </div>
+            <p id="bd">Aniversary Sale</p>
+            <p>SPANX</p>
+            <p id="bd">Sale : INR 5,464.77</p>
+            <p>After Sale: INR 8,251.89</p>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+        </div>
+        <div>
+            <div class="container">
+            <img src="https://i.ebayimg.com/images/g/ssYAAOSw-tpiFZCf/s-l500.jpg" alt="Avatar" class="image">
+            <div class="overlay">Quick View</div>
+            </div>
+            <p id="bd">Aniversary Sale</p>
+            <P>Barefoot Dream</P>
+            <p id="bd">Sale : INR 6,727.82</p>
+            <p>After Sale: INR 9,767.55</p>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+        </div>
+    </div>
+
 
     <!-- 100+ FREE GIFTS WITH PURCHASE -->
-    <div>
+    <div class="gift">
         <div>
            <img src="https://media.fashionnetwork.com/m/6196/36fc/435f/778c/f01e/ea50/89aa/01a4/731e/d94a/d94a.png" alt="">
         </div>
         <div>
-            <h4>100+ FREE GIFTS WITH PURCHASE (UP TO $330 VALUE)</h4><br>
+            <h2>100+ FREE GIFTS WITH PURCHASE (UP TO $330 VALUE)</h2>
             <p>Score great gifts from La Mer, Dior, Bobbi Brown, Jo Malone London and more top brands. Hurry—quantities are limited!</p>
             <p><a href="">Gifts with Purchase</a></p>
         </div>
     </div>
-    <hr>
+    <hr class="dark">
 
     <!-- SHOP ANNIVERSARY SALE -->
-    <div>
-        <h1>SHOP ANNIVERSARY SALE</h1>
-        <div>
-            <a href="https://imgbb.com/"><img src="https://i.ibb.co/vXxDrLd/5b128244-8afa-4013-9dfb-b7a58d146975.webp" alt="5b128244-8afa-4013-9dfb-b7a58d146975" border="0"></a>
-            <h4>All</h4>
-        </div>
-        <div>
-            <a href="https://imgbb.com/"><img src="https://i.ibb.co/jbtWWtS/953f29c9-70e4-44fb-9c76-83eb75a08bcc.webp" alt="953f29c9-70e4-44fb-9c76-83eb75a08bcc" border="0"></a>
-            <h4>Women</h4>
-        </div>
-        <div>
-            <a href="https://imgbb.com/"><img src="https://i.ibb.co/G5MG45s/f42702fe-25ba-4082-b757-3dee83e9067b.webp" alt="f42702fe-25ba-4082-b757-3dee83e9067b" border="0"></a>
-            <h4>Men</h4>
-        </div>
-        <div>
-            <a href="https://imgbb.com/"><img src="https://i.ibb.co/ZHSZ7yH/d6e27ed2-853e-4822-ba8b-4411620a7fa9.webp" alt="d6e27ed2-853e-4822-ba8b-4411620a7fa9" border="0"></a>
-            <h4>Kids</h4>
-        </div>
-        <div>
-            <a href="https://imgbb.com/"><img src="https://i.ibb.co/9nfnD3P/07fa7e16-f813-4981-a795-c9ac1978ff53.webp" alt="07fa7e16-f813-4981-a795-c9ac1978ff53" border="0"></a>
-            <h4>Home</h4>
-        </div>
-        <div>
-            <img src="https://wwd.com/wp-content/uploads/2022/06/20211221_NOVA-BEAUTY_298.jpg?w=910&h=511&crop=1" alt="">
-            <h4>Beauty Exclusives</h4>
+    <div class="shophead">
+        <h2>SHOP ANNIVERSARY SALE</h2>
+        <div class="shop">
+            <div>
+                <a href="https://imgbb.com/"><img src="https://i.ibb.co/vXxDrLd/5b128244-8afa-4013-9dfb-b7a58d146975.webp" alt="5b128244-8afa-4013-9dfb-b7a58d146975" border="0"></a>
+                <h4>All</h4>
+            </div>
+            <div>
+                <a href="https://imgbb.com/"><img src="https://i.ibb.co/jbtWWtS/953f29c9-70e4-44fb-9c76-83eb75a08bcc.webp" alt="953f29c9-70e4-44fb-9c76-83eb75a08bcc" border="0"></a>
+                <h4>Women</h4>
+            </div>
+            <div>
+                <a href="https://imgbb.com/"><img src="https://i.ibb.co/G5MG45s/f42702fe-25ba-4082-b757-3dee83e9067b.webp" alt="f42702fe-25ba-4082-b757-3dee83e9067b" border="0"></a>
+                <h4>Men</h4>
+            </div>
+            <div>
+                <a href="https://imgbb.com/"><img src="https://i.ibb.co/ZHSZ7yH/d6e27ed2-853e-4822-ba8b-4411620a7fa9.webp" alt="d6e27ed2-853e-4822-ba8b-4411620a7fa9" border="0"></a>
+                <h4>Kids</h4>
+            </div>
+            <div>
+                <a href="https://imgbb.com/"><img src="https://i.ibb.co/9nfnD3P/07fa7e16-f813-4981-a795-c9ac1978ff53.webp" alt="07fa7e16-f813-4981-a795-c9ac1978ff53" border="0"></a>
+                <h4>Home</h4>
+            </div>
+            <div>
+                <img src="https://wwd.com/wp-content/uploads/2022/06/20211221_NOVA-BEAUTY_298.jpg?w=910&h=511&crop=1" alt="">
+                <h4>Beauty Exclusives</h4>
+            </div>
         </div>
     </div>
 
     <!-- RSVP-WORTHY EVENTS & FREE STYLE HELP -->
-    <div>
+    <div class="event">
         <div>
             <a href="https://ibb.co/W6kjZSM"><img src="https://i.ibb.co/9NbS6R1/f9f92a6e-bcc6-4d9c-82fd-7521013e3128.webp" alt="f9f92a6e-bcc6-4d9c-82fd-7521013e3128" border="0"></a>
-            <p>You're invited to our beauty events, classes, livestreams and more.</p>
-            <p><a href="">RSVP Now</a></p>
+            <div>
+                <p>You're invited to our beauty events, classes, livestreams and more.</p>
+                <p><a href="">RSVP Now</a></p>
+            </div>
+            
         </div>
+        <div id="wdth"></div>
         <div>
             <a href="https://ibb.co/1XLzyYG"><img src="https://i.ibb.co/7pXkMxt/f1297f52-210c-4893-bda1-1a9f110f5e90.webp" alt="f1297f52-210c-4893-bda1-1a9f110f5e90" border="0"></a>
-            <p>Shop the sale with a stylist to find the best deals, handpicked just for you.</p>
-            <p><a href="">Learn More</a><a href="">Book an Appointment</a></p>
+            <div>
+                <p>Shop the sale with a stylist to find the best deals, handpicked just for you.</p>
+                <p><a href="">Learn More</a><a style="padding-left:15px ;" href="">Book an Appointment</a></p>
+            </div>
+            
         </div>
     </div>
 
     <!-- Nordy -->
-    <div>
-        <div>
+    <div class="nordy">
+        <div id="nor1">
             <img src="https://www.nordstromcard.com/content/img/fashion-rewards/TheNordyClub_Logo.png" alt="">
         </div>
         <div>
-            <h2>Get a $40 Bonus Note!</h2>
+            <h4>Get a $40 Bonus Note!</h4>
             <p>An exclusive offer for new Nordstrom credit cardmembers. Restrictions apply.</p>
             <p><a href="">Apply Now</a></p>
         </div>
-        <div>
+        <div id="nor2">
             <img src="https://cdn.wallethub.com/common/product/images/creditcards/500/nordstrom-credit-card-13391867c.png" alt="">
         </div>
     </div>
-    <hr>
+    <hr class="dark">
 
     <!-- NEW & NOTEWORTHY -->
-    <h1>NEW & NOTEWORTHY</h1>
-    <div>
+    <h1 id="worhead">NEW & NOTEWORTHY</h1>
+    <div class="new">
         <div>
             <a href="https://ibb.co/7CJpHK9"><img src="https://i.ibb.co/wgNQT4v/497d0b71-232e-4104-a846-a3fbea893eca.webp" alt="497d0b71-232e-4104-a846-a3fbea893eca" border="0"></a>
         </div>
@@ -210,7 +1144,7 @@
             <p>The silhouettes you need for getting dressed up, enjoying downtime and everything in between.</p>
             <p><a href="">Jeans & Denim</a></p>
         </div>
-        <div>
+        <!-- <div>
             <a href="https://ibb.co/tx19rGZ"><img src="https://i.ibb.co/KL8JvPN/31d24523-19e3-4946-8d81-db7e35a0bd57.webp" alt="31d24523-19e3-4946-8d81-db7e35a0bd57" border="0"></a>
         </div>
         <div>
@@ -233,25 +1167,30 @@
             <h1>Disney x Givenchy</h1>
             <p>SDiscover the limited-edition capsule collection inspired by Disney's <i>101 Dalmatians.</i></p>
             <p><a href="">Disney x Givenchy</a><a href="">Go Behind the Collection</a></p>
-        </div>
+        </div> -->
     </div>
-    <hr>
+    <hr class="dark">
 
     <!-- TRENDING NOW -->
-    <h1>TRENDING NOW</h1>
-    <div>
+    <h2 id="trendh">TRENDING NOW</h2>
+    <div class="trend">
         <div>
-            <div>
+            <div class="top">
                <a href="https://ibb.co/Qrwvy1K"><img src="https://i.ibb.co/bz95c8K/77bba4de-ea25-437e-b7fc-840254d2fad3.webp" alt="77bba4de-ea25-437e-b7fc-840254d2fad3" border="0"></a>
             </div>
             <div>
                 <h3>Sustainable Style</h3>
                 <p>Get to know OSEA and RMS Beauty, industry leaders making clean and sustainable beauty their business.</p>
-                <p><a href="">Go Behind the Brands</a><a href="">Shop Sustainable Style</a></p>
+                <div>
+                    <p><a href="">Go Behind the Brands</a></p>
+                    <div id="wid"></div>
+                    <p><a href="">Shop Sustainable Style</a></p>
+                </div>
+                
             </div>
         </div>
         <div>
-            <div>
+            <div class="mid">
                 <a href="https://ibb.co/rbDcJJh"><img src="https://i.ibb.co/YDHyGGS/dcd64b97-ffdf-42cd-aff1-c7636737d65c.webp" alt="dcd64b97-ffdf-42cd-aff1-c7636737d65c" border="0"></a>
             </div>
             <div>
@@ -261,28 +1200,816 @@
             </div>
         </div>
         <div>
-            <div>
+            <div class="buttom">
                 <img src="https://cdn.shopify.com/s/files/1/0063/2904/0985/products/summerLite-2_600x.jpg?v=1627163918" alt="">
             </div>
             <div>
                 <h3>Active Summer Staples</h3>
                 <p>Wear these exceptionally comfortable picks for workouts, hangouts and more. From Zella, Rhone, adidas and other favorites</p>
-                <p><a href="">Women's Activewear</a> <a href="">Men's Activewear</a>
-                <a href="">Explore Our Active Guide</a></p>
+                <div>
+                    <div><p><a href="">Women's Activewear</a></p></div>                
+                    <div id="wid"></div>
+                    <div id="wid"></div>
+                    <div><p><a href="">Men's Activewear</a></p></div>
+                </div>
+                <div>
+                    <div><a href="">Explore Our Active Guide</a></p></div> 
+                </div>
+                       
             </div>
         </div>
     </div>
 
     <!-- We think you’ll love these -->
-    <h1>We think you’ll love these</h1>
+    <h2 id="wehead">We think you’ll love these</h2>
     <p>Based on items you've shopped</p>
+    <div class="best-sales">
+        <div>
+            <div class="container">
+            <img src="https://cdn11.bigcommerce.com/s-1pc49pcwwp/images/stencil/original/products/9725/17783/nova_white_dcs_bop_1__28310.1594013123.jpg?c=1" alt="Avatar" class="image">
+            <div class="overlay">Quick View</div>
+            </div>
+            <p id="bd">Aniversary Sale</p>
+            <p>Nordstrom</p>
+            <p id="bd">Sale : INR 6,306.80-INR 7,485.65</p>
+            <p>After Sale: INR 8336.10-INR 10020.16</p>          
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+        </div>
+        <div>
+            <div class="container">
+            <img src="https://www.gripsholmhome.com/media/catalog/product/cache/e4d64343b1bc593f1c5348fe05efa4a6/p/a/paslakanset-gots-vintage-tvattat-copper-150x210-50x60-cm_917619-16_1.jpg" alt="Avatar" class="image">
+            <div class="overlay">Quick View</div>
+            </div>
+            <p id="bd">Aniversary Sale</p>
+            <p>Nordstrom</p>
+            <p id="bd">Sale : INR 12,622.03-INR 14,558.70</p>
+            <p>After Sale: INR 16,756.40-INR 19,282.49</p> 
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+        </div>
+        <div>
+            <div class="container">
+            <img src="https://cdn11.bigcommerce.com/s-9kuy4b5cao/images/stencil/500x659/products/28431/63629/TP-SS-ST__99110.1565368178.jpg?c=2" alt="Avatar" class="image">
+            <div class="overlay">Quick View</div>
+            </div>
+            <p id="bd">Aniversary Sale</p>
+            <p>Nordstrom</p>
+            <p id="bd">Sale : INR 6,306.80-INR 7,485.65</p>
+            <p>After Sale: INR 8,663.10-INR 10,020.16</p>          
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+        </div>
+        <div>
+            <div class="container">
+            <img src="https://cdn.shopify.com/s/files/1/0557/8840/4900/files/archmodule_quiltsilo_oyster_1200x.jpg?v=1652113313,//cdn.shopify.com/s/files/1/0557/8840/4900/files/archmodule_quiltsilo_oyster_1200x@2x.jpg?v=1652113313" alt="Avatar" class="image">
+            <div class="overlay">Quick View</div>
+            </div>
+            <p id="bd">Aniversary Sale</p>
+            <p>Nordstrom</p>
+            <p id="bd">Sale : INR 7,317.24-INR 9,506.52</p>
+            <p>After Sale: INR 10,862.19-INR 14,230.31</p>        
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+        </div>
+        <div>
+            <div class="container">
+            <img src="https://cdn.shopify.com/s/files/1/2994/3212/products/2021_11_03_9999_86_1200x.jpg?v=1636606444" alt="Avatar" class="image">
+            <div class="overlay">Quick View</div>
+            </div>
+            <p id="bd">Aniversary Sale</p>
+            <p>Sijo</p>
+            <p id="bd">Sale : INR 7,072.21-INR 10,440.33</p>
+            <p>After Sale: INR 8,841.32-INR 13,050.59</p>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+        </div>
+        <div>
+            <div class="container">
+            <img src="https://m.media-amazon.com/images/I/51arp3M6aLL._AC_SL400_.jpg" alt="Avatar" class="image">
+            <div class="overlay">Quick View</div>
+            </div>
+            <p id="bd">Aniversary Sale</p>
+            <p>Nordstrom</p>
+            <p id="bd">Sale : INR 1,591.44-INR 1,844.05</p>
+            <p>After Sale: INR 2,105.08-INR 2,441.49</p>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+        </div>
+    </div>
 
     <!-- DESIGNER CLEARANCE -->
-    <h1>DESIGNER CLEARANCE</h1>
-    <h2>UP TO 70% OFF</h2>
-    <h2>It's On Now</h2>
-    <p>Save on the best brands and styles.</p>
-    <p><a href="">Designer Sale</a></p>
+    <div class="design">
+        <div>
+            <h1>DESIGNER CLEARANCE</h1>
+            <h2>UP TO 70% OFF</h2>
+        </div>
+        <div>
+            <h2>It's On Now</h2>
+            <p>Save on the best brands and styles.</p>
+            <p><a href="">Designer Sale</a></p>
+        </div>
+    </div>
     
+    
+    
+    <!-- Fresh picks for you in designer brands -->
+    <h2>Fresh picks for you in designer brands</h4>
+    <div class="best-sales">
+        <div>
+            <div class="container">
+            <img src="https://img.ltwebstatic.com/images2_pi/2019/02/20/15506478722207673309_thumbnail_600x799.webp" alt="Avatar" class="image">
+            <div class="overlay">Quick View</div>
+            </div>
+            <p id="bd" class="rd">Limited-Time Sale</p>
+            <p>Versace</p>
+            <p id="bd" class="rd">INR 15,156.54-INR 31,576.13</p>
+            <p class="rd">(Extra 20% off select items)</p>
+            <p class="strike">INR 18,945.60</p>
+            <p class="strike">INR 31,576.13</p>          
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star "></span>
+                <span class="fa fa-star"></span>
+        </div>
+        <div>
+            <div class="container">
+            <img src="https://cdn-images.italist.com/image/upload/t_medium_mobile_dpr_2_q_auto_v_2,f_auto/c7d0003a66dd7bb3c242573b78373c1b.jpg" alt="Avatar" class="image">
+            <div class="overlay">Quick View</div>
+            </div>
+            <p>Stella McCartney</p>
+            <p id="bd" class="rd">INR 18,524.66  (60% off)</p>
+            <p class="strike">INR 46,311.65</p>  
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star "></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+        </div>
+        <div>
+            <div class="container">
+            <img src="https://image.s5a.com/is/image/saks/0400015249068_TURINCHECK?wid=534&hei=712&qlt=90&resMode=sharp2&op_usm=0.9,1.0,8,0" alt="Avatar" class="image">
+            <div class="overlay">Quick View</div>
+            </div>
+            <p id="bd" class="rd">Limited-Time Sale</p>
+            <p>John Elliott</p>
+            <p id="bd" class="rd">INR 23,529.69  (Extra 60% off)</p>
+            <p class="strike">INR 50,024.22</p>
+            <p class="strike">INR 84,034.59</p>         
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+        </div>
+        <div>
+            <div class="container">
+            <img src="https://images.ikrix.com/product_images/large/versace-sandals-medusa-head-and-greca-key-slide-sandals-00000140299f00s001.jpg" alt="Avatar" class="image">
+            <div class="overlay">Quick View</div>
+            </div>
+            <p>Versace</p>
+            <p id="bd" class="rd">INR 18,945.68-INR 35,786.28</p>
+            <p class="rd">(Up to 40% off select items)</p>
+            <p class="strike">INR 31,576.13-INR 35,786.28</p>            
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+        </div>
+        <div>
+            <div class="container">
+            <img src="https://valentino-cdn.thron.com/delivery/public/image/valentino/dcc488d2-4768-4a62-8f21-936ffbf99a47/ihqstx/std/1536x0/VALENTINO-GARAVANI-ATELIER-SHOES-03-ROSE-EDITION-RUBBER-ANKLE-BOOT-50MM?quality=80&size=35&format=auto" alt="Avatar" class="image">
+            <div class="overlay">Quick View</div>
+            </div>
+            <p id="bd" class="rd">Limited-Time Sale</p>
+            <p>Valentino Garavani</p>
+            <p id="bd" class="rd">INR 27,913.29  (Extra 35% off)</p>
+            <p class="strike">INR 42,943.53</p>
+            <p class="strike">INR 71,572.55</p>    
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+        </div>
+        <div>
+            <div class="container">
+            <img src="https://www.rlmedia.io/is/image/PoloGSI/s7-1436611_alternate1?$rl_df_pdp_5_7$" alt="Avatar" class="image">
+            <div class="overlay">Quick View</div>
+            </div>
+            <p id="bd" class="rd">Limited-Time Sale</p>
+            <p>Off-White</p>
+            <p id="bd" class="rd">INR 10,609.58 (40% off)</p>
+            <p class="strike">INR 17,602.63</p>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+        </div>
+    </div>
+
+    <!-- NORDY POD -->
+
+    <div class="nordypod">
+        <div>
+            <img src="https://image.simplecastcdn.com/images/ff238ee8-515d-4a1b-b8b0-aa3d16ee4aa9/c409bd06-07a6-435f-9226-34bb30976963/3000x3000/thenordypod-3000x3000.jpg?aid=rss_feed?crop=1:1,offset-y0" alt="">
+        </div>
+        <div>
+            <h2>Meet the CEO of the Most Iconic Denim Brand </h2>
+            <h4>Chip Bergh talks with Pete about fostering innovative design, crafting sustainable denim and giving back. </h4>
+            <p><a href="">Listen to All Episodes</a></p>
+        </div>
+    </div>
+
+    <!-- Great deals on what you love -->
+    <h2>Great deals on what you love</h2>
+    <p style="font-size: 14px; margin:-15px 0px 25px 0px">Items similar to what you've browsed are on sale</p>
+    <div class="best-sales">
+        <div>
+            <div class="container">
+            <img src="https://images.allsaints.com/products/900/ML066W/7351/ML066W-7351-5.jpg" alt="Avatar" class="image">
+            <div class="overlay">Quick View</div>
+            </div>
+            <p id="bd" class="rd">Limited-Time Sale</p>
+            <p>AllSaints</p>
+            <p id="bd" class="rd">INR 20,804.88  (Extra 25% off)</p>
+            <p class="strike">INR 27,740.68</p>
+            <p class="strike">INR 50,437.60</p>             
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+        </div>
+        <div>
+            <div class="container">
+            <img src="https://images.allsaints.com/products/900/ML069W/5/ML069W-5-1.jpg" alt="Avatar" class="image">
+            <div class="overlay">Quick View</div>
+            </div>
+            <p id="bd" class="rd" style="color: blue;">New!</p>
+            <p>AllSaints</p>
+            <p id="bd" class="rd">INR 33,512.79-INR 47,911.51</p>
+            <p class="rd">(Extra 30% off select items)</p>
+            <p class="strike">INR 47,911.51</p>   
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+        </div>
+        <div>
+            <div class="container">
+            <img src="https://images.asos-media.com/products/new-look-hooded-puffer-jacket-in-stone/201132104-1-stone?$n_640w$&wid=513&fit=constrain" alt="Avatar" class="image">
+            <div class="overlay">Quick View</div>
+            </div>
+            <p id="bd" class="rd">Limited-Time Sale</p>
+            <p>Vince</p>
+            <p id="bd" class="rd">INR 12,472.15  (Extra 25% off)</p>
+            <p class="strike">INR 16,630.09</p>
+            <p class="strike">INR 33,260.19</p>            
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+        </div>
+        <div>
+            <div class="container">
+            <img src="https://cdn.media.amplience.net/i/vince/M70639114A_967CMG_001/Herringbone-Puffer-Jacket-967CMG?$medium$&fmt=auto" alt="Avatar" class="image">
+            <div class="overlay">Quick View</div>
+            </div>
+            <p id="bd" class="rd">Limited-Time Sale</p>
+            <p>Vince</p>
+            <p id="bd" class="rd">INR 10,735.88  (Extra 25% off)</p>
+            <p class="strike">INR 14,314.51</p>
+            <p class="strike">INR 35,786.28</p>             
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+        </div>
+        <div>
+            <div class="container">
+            <img src="https://cdn.modesens.com/product/36412657_3?w=400&" alt="Avatar" class="image">
+            <div class="overlay">Quick View</div>
+            </div>
+            <p id="bd" class="rd">Limited-Time Sale</p>
+            <p>Vince</p>
+            <p id="bd" class="rd">Sale : INR 15,030.24 (Extra 25% off)</p>
+            <p class="strike">INR 20,040.31</p>
+            <p class="strike">INR 50,100.79</p>   
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+        </div>
+        <div>
+            <div class="container">
+            <img src="https://images.bloomingdalesassets.com/is/image/BLM/products/0/optimized/10855270_fpx.tif?op_sharpen=1&wid=500&fit=fit,1&$filtersm$&fmt=webp" alt="Avatar" class="image">
+            <div class="overlay">Quick View</div>
+            </div>
+            <p id="bd" class="rd">Limited-Time Sale</p>
+            <p>Marimekko</p>
+            <p id="bd" class="rd">INR 5,303.95-INR 6,482.79</p>
+            <p class="rd">(30% off)</p>
+            <p class="strike">INR 7,577.43-INR 9,261.49</p>   
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+        </div>
+    </div>
+
+    <!-- Pick Up Today -->  
+    <div class="pickup">
+        <div>
+            <h4>Pick Up Today</h4>
+        </div>
+        <div>
+            <img src="https://www.mazdaofeverett.com/assets/d353/img/buy-your/car.png" alt="">
+        </div>
+        <div>
+            <p>In store or curbside.</p>
+            <p><a href="">Set Your Store</a></p>
+        </div>
+    </div>
+    <hr id="orange">
+    <!-- New arrivals from brands you might like -->
+    <h2 style="margin: 60px 0px 40px 0px; font-size:22px">New arrivals from brands you might like</h2>
+    <div class="best-sales" style="margin-bottom: 140px;">
+        <div>
+            <div class="container">
+            <img src="https://i.ebayimg.com/images/g/-doAAOSwTVJhEFo9/s-l300.jpg" alt="Avatar" class="image">
+            <div class="overlay">Quick View</div>
+            </div>
+            <p>SPANX</p>
+            <p id="bd">INR 5,725.80</p>            
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+        </div>
+        <div>
+            <div class="container">
+            <img src="https://images.dickssportinggoods.com/is/image/GolfGalaxy/17CA2WLGHTWGHTPRFAPBB_Dark_Ocean?qlt=70&wid=992&fmt=webp" alt="Avatar" class="image">
+            <div class="overlay">Quick View</div>
+            </div>
+            <p>SPANX</p>
+            <p id="bd">INR 7,409.86</p>   
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+        </div>
+        <div>
+            <div class="container">
+            <img src="https://cdn.shopify.com/s/files/1/0260/0262/0504/products/3402ee343a0bd533bc06f626eb68aedd6f9b1340_794x_2x_7c99d5eb-d491-4664-9e97-d5a5311a0558_520x780.jpg?v=1649347909" alt="Avatar" class="image">
+            <div class="overlay">Quick View</div>
+            </div>
+            <p>SPANX</p>
+            <p id="bd">Sale : INR 7,148.83</p>
+            <p>After Sale: INR 10,777.98</p>         
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+        </div>
+        <div>
+            <div class="container">
+            <img src="https://cdn.shopify.com/s/files/1/0564/0598/3384/products/EBJ0239-PJ1018SN-GASP-F.jpg?v=1631477527" alt="Avatar" class="image">
+            <div class="overlay">Quick View</div>
+            </div>
+            <p id="bd" class="rd">Limited-Time Sale</p>
+            <p>John Elliott</p>
+            <p id="bd" class="rd">Sale : INR 23,529.69  (Extra 60% off)</p>
+            <p class="strike">INR 50,024.22</p>
+            <p class="strike">INR 84,034.59</p>             
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+        </div>
+        <div>
+            <div class="container">
+            <img src="https://dimg.dillards.com/is/image/DillardsZoom/mainProduct/spanx-stretch-twill-jogger/00000000_zi_377c3c47-926a-4167-a2be-6ba84485ee83.jpg" alt="Avatar" class="image">
+            <div class="overlay">Quick View</div>
+            </div>
+            <p id="bd" class="rd">Limited-Time Sale</p>
+            <p>SPANX</p>
+            <p id="bd" class="rd">INR 5,657.60-INR 10,777.98</p>
+            <p>(Extra 25% off select items)</p>
+            <p class="strike">INR 7,544.59</p>
+            <p class="strike">INR 10,777.90</p>   
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+        </div>
+        <div>
+            <div class="container">
+            <img src="https://cdn.shopify.com/s/files/1/0549/4895/4134/products/333fa10c0a75c4bd85bb28f366a70d430d70265a_794x.jpg?v=1637273856" alt="Avatar" class="image">
+            <div class="overlay">Quick View</div>
+            </div>
+            <p>SPANX</p>
+            <p id="bd">Sale : INR 5,464.77</p>
+            <p>After Sale: INR 8,251.89</p> 
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+        </div>
+    </div>
+
+
+    <hr>
+
+    <!-- SHOP BY CATEGORY -->
+    <h2 id="shopheading">SHOP BY CATEGORY</h2>
+    <div class="shopbycat">
+        <div >
+            <img src="https://d1flfk77wl2xk4.cloudfront.net/Assets/28/255/L_p0113925528.jpg" alt="">
+            <h4>Women</h4>
+        </div>
+        <div>
+            <img src="https://cdn.shopify.com/s/files/1/0009/5695/6732/products/DSC08940_395b9ee0-3941-43b1-aabc-a17c7d690066_5000x.jpg?v=1634038082" alt="">
+            <h4>Men</h4>
+        </div>
+        <div>
+            <img src="https://lilyachair.com/wp-content/uploads/kids1.jpg" alt="">
+            <h4>Kids</h4>
+        </div>
+        <div>
+            <img src="https://houseandhome.com/wp-content/uploads/2019/07/crop-9TableTop_July_2019_3.jpg" alt="">
+            <h4>Home</h4>
+        </div>
+        <div>
+            <img src="https://i.ytimg.com/vi/YunFqp9NxqE/maxresdefault.jpg" alt="">
+            <h4>Beauty & Fragrance</h4>
+        </div>
+        <div>
+            <img src="https://cache.net-a-porter.com/content/images/story-head-content-v12-1644311534334.jpeg/w950_q65.jpeg" alt="">
+            <h4>Designer</h4>
+        </div>
+    </div>
+
+     <!-- CURRENTLY LOVING -->
+     <h2 class="lovhead">CURRENTLY LOVING</h2>
+     <p>Explore favorite looks from Instagram. Tag @Nordstrom to show us your finds.</p>
+     <div class="curloving">
+            <div class="containerr">
+                <img src="https://cdn.dashhudson.com/media/full/1657740910.525987412723.jpeg" alt="Avatar" class="image" style="width:100%">
+                <div class="middle">
+                <div class="text">Shop Now</div>
+            </div>
+        </div>
+            <div class="containerr">
+                <img src="https://cdn.dashhudson.com/media/full/1658425022.699072883311.jpeg" alt="Avatar" class="image" style="width:100%">
+                <div class="middle">
+                <div class="text">Shop Now</div>
+            </div>
+            </div>
+            <div class="containerr">
+              <img src="https://cdn.dashhudson.com/media/full/1657388102.534787226878.jpeg" alt="Avatar" class="image" style="width:100%">
+              <div class="middle">
+                <div class="text">Shop Now</div>
+              </div>
+            </div>
+            <div class="containerr">
+              <img src="https://cdn.dashhudson.com/media/full/1657724212.179926920384.jpeg" alt="Avatar" class="image" style="width:100%">
+              <div class="middle">
+                <div class="text">Shop Now</div>
+              </div>
+            </div>
+            <!-- <img src="https://cdn.dashhudson.com/media/full/1657740910.525987412723.jpeg" alt="">
+        </div>
+        <div>
+            <img src="https://cdn.dashhudson.com/media/full/1658425022.699072883311.jpeg" alt="">
+        </div>
+        <div>
+            <img src="https://cdn.dashhudson.com/media/full/1657388102.534787226878.jpeg" alt="">
+        </div>
+        <div>
+            <img src="https://cdn.dashhudson.com/media/full/1657724212.179926920384.jpeg" alt=""> -->
+        </div>
+        <!-- <div>
+            <img src="https://cdn.dashhudson.com/media/full/1655383272.591131724484.jpeg" alt="">
+        </div>
+        <div>
+            <img src="https://cdn.dashhudson.com/media/full/1655397645.175825696310.jpeg" alt="">
+        </div>
+        <div>
+            <img src="https://cdn.dashhudson.com/media/full/1654796191.030688524402.jpeg" alt="">
+        </div>
+        <div>
+            <img src="https://cdn.dashhudson.com/media/full/1654811313.213167787356.jpeg" alt="">
+        </div>
+        <div>
+            <img src="https://cdn.dashhudson.com/media/full/1655316875.476276417682.jpeg" alt="">
+        </div>
+        <div>
+            <img src="https://cdn.dashhudson.com/media/full/1654010569.56247865429.jpeg" alt="">
+        </div>
+        <div>
+            <img src="https://cdn.dashhudson.com/media/full/1653431811.86901457355.jpeg" alt="">
+        </div>
+        <div>
+            <img src="https://cdn.dashhudson.com/media/full/1653452004.66078733427.jpeg" alt="">
+        </div>
+        <div>
+            <img src="https://cdn.dashhudson.com/media/full/1654215479.017596780235.jpeg" alt="">
+        </div>
+        <div>
+            <img src="https://cdn.dashhudson.com/media/full/1648743348.98602497083.jpeg" alt="">
+        </div>
+        <div>
+            <img src="https://cdn.dashhudson.com/media/full/1648051516.328667225893.jpeg" alt="">
+        </div>
+        <div>
+            <img src="https://cdn.dashhudson.com/media/full/1650630196.1066461163.jpeg" alt="">
+        </div>
+        <div>
+            <img src="https://cdn.dashhudson.com/media/full/1634145375.908124478742.jpeg" alt="">
+        </div>
+        <div>
+            <img src="https://cdn.dashhudson.com/media/full/1633576910.42796190538.jpeg" alt="">
+        </div>
+        <div>
+            <img src="https://cdn.dashhudson.com/media/full/1638985643.81467653793.jpeg" alt="">
+        </div>
+        <div>
+            <img src="https://cdn.dashhudson.com/media/full/1639450121.23927782505.jpeg" alt="">
+        </div> -->
+     </div>
+
+     <!-- Trending near you -->
+     <h2 style="margin: 80px 0px -10px 40px; font-size:22px">Trending near you</h2>
+     <p style="margin: 20px 0px 30px 40px;font-size:15px">The most-viewed items by shoppers in your area</p>
+     <div class="best-sales" style="padding-left: 20px;">
+        <div>
+            <div class="container">
+            <img src="https://gazzaz.com.sa/media/catalog/product/cache/2aef64a70f4ba3a11c2ef279e5bad27b/1/2/121913115075.jpg" alt="Avatar" class="image">
+            <div class="overlay">Quick View</div>
+            </div>
+            <p>Lancome</p>
+            <p id="bd">INR 5,052.18-INR 10,946.39</p>            
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+        </div>
+        <div>
+            <div class="container">
+            <img src="https://dy6g3i6a1660s.cloudfront.net/5SyVJ5-QzNbaazsssaGREwR-BH4=/p_175x175.jpg" alt="Avatar" class="image">
+            <div class="overlay">Quick View</div>
+            </div>
+            <p id="bd" class="rd">Limited-Time Sale</p>
+            <p>Charlotte Tibury</p>
+            <p id="bd">INR 6,315.23</p>   
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+        </div>
+        <div>
+            <div class="container">
+            <img src="https://assets.vincecamuto.com/is/image/vincecamuto/8200000000501423_740_ss_01?impolicy=qlt-medium-high&imwidth=640&imdensity=1" alt="Avatar" class="image">
+            <div class="overlay">Quick View</div>
+            </div>
+            <p id="bd" class="rd">Limited-Time Sale</p>
+            <p>Vince Camuto</p>
+            <p id="bd" class="rd">INR 3,125.62-INR 4,168.05</p>
+            <p class="rd">(Extra 25% off select items)</p>
+            <p class="strike">INR 4,160.05</p>
+            <p class="strike">INR 8,336.10</p>         
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+        </div>
+        <div>
+            <div class="container">
+            <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/8f5877c4626f45ab8e37ae700113842a_9366/Adizero_Running_Split_Shorts_Green_HH7237_21_model.jpg" alt="Avatar" class="image">
+            <div class="overlay">Quick View</div>
+            </div>
+            <p id="bd" class="rd">Limited-Time Sale</p>
+            <p>Zella</p>
+            <p id="bd" class="rd">INR 1,546.81-INR 4,125.95</p>
+            <p class="rd">(Extra 25% off select items)</p>
+            <p class="strike">INR 2,062.97-INR 2,000.16</p>
+            <p class="strike">INR 4,125.95</p>                      
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+        </div>
+        <div>
+            <div class="container">
+            <img src="https://cdn.shopify.com/s/files/1/0558/5036/9220/products/Nike-Air-Force-1-Low-Medium-Blue_jpg_1024x1024@2x.webp?v=1652892433" alt="Avatar" class="image">
+            <div class="overlay">Quick View</div>
+            </div>
+            <p id="bd" style="color: blue;">New!</p>
+            <p>Nike</p>
+            <p id="bd">INR 8,420.30-INR 9,262.33</p>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+        </div>
+        <div>
+            <div class="container">
+            <img src="https://i.ebayimg.com/images/g/U7cAAOSwfSdiKaOv/s-l300.jpg" alt="Avatar" class="image">
+            <div class="overlay">Quick View</div>
+            </div>
+            <p id="bd" class="rd">Limited-Time Sale</p>
+            <p>Treasure & Bond</p>
+            <p id="bd" class="rd">INR 2,234.75-INR 4,967.98</p>
+            <p class="rd">(Extra 25% off select items)</p>
+            <p class="strike">INR 2,900.79-INR 3,974.30</p>
+            <p class="strike">INR 4,967.90</p>   
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+        </div>
+    </div>
+    </div>
+     <!-- Footer -->
+     <div class="footer">
+        <div>
+            <h4>Customer Service</h4>
+            <p>Contact Us</p>
+            <p>Order Status</p>
+            <p>Shipping</p>
+            <p>Return Policy & Exchanges</p>
+            <p>Price Adjustments</p>
+            <p>Gift Cards</p>
+            <p>FAQ</p>
+            <p>Product Recalls</p>
+            <div id="india">
+                <div><img src="https://n.nordstrommedia.com/alias/IN.gif" alt=""></div>
+                <div><p>India</p></div>
+            </div>
+        </div>
+        <div>
+            <h4>About Us</h4>
+            <p>Careers</p>
+            <p>Corporate Social Responsibility</p>
+            <p>Diversity, Inclusion & Belonging</p>
+            <p>Get Email Updates</p>
+            <p>Nordstrom Blog</p>
+            <p>The Thread</p>
+            <p>Nordy Podcast</p>
+        </div>
+        <div>
+            <h4>Stores & Services</h4>
+            <p>Find a Store</p>
+            <p>Free Style Help</p>
+            <p>Alterations & Tailoring</p>
+            <p>Pop-In Shop</p>
+            <p>Virtual Events</p>
+            <p>Spa Nordstrom</p>
+            <p>Nordstrom Restaurants</p>
+            <p>Nordstrom Local</p>
+        </div>
+        <div>
+            <h4>Nordstrom Card & Rewards</h4>
+            <p>The Nordy Club Rewards</p>
+            <p>Pay My Bill</p>
+            <p>Manage My Nordstrom Card</p>
+        </div>
+        <div>
+            <h4>Nordstrom, Inc.</h4>
+            <p>Nordstrom Rack</p>
+            <p>Nordstrom Canada</p>
+            <p>Investor Relations</p>
+            <p>Press Releases</p>
+            <p>Nordstrom Media Network</p>
+        </div>
+        <div>
+            <div class="footmain">
+                <div class="tab">
+                    <div>
+                        <img src="https://uploads-ssl.webflow.com/56a0aec42f2ef2655bb8db60/56e67160b4a0d57a57b0359d_technology.png" alt="">
+                    </div>
+                    <div><p>Get our apps</p></div>
+                </div>
+                <div class="social">
+                    <div>
+                        <a href="https://imgbb.com/"><img src="https://i.ibb.co/7zgrfBn/Instagram.png" alt="Instagram" border="0"></a>
+                    </div>
+                    <div>
+                        <a href="https://imgbb.com/"><img src="https://i.ibb.co/7J5ZnzK/Pin-Interest.png" alt="Pin-Interest" border="0"></a>
+                    </div>
+                    <div>
+                        <a href="https://imgbb.com/"><img src="https://i.ibb.co/VH1g1QH/Twitter.png" alt="Twitter" border="0"></a>
+                    </div>
+                    <div>
+                        <a href="https://imgbb.com/"><img src="https://i.ibb.co/BzXRM6x/Facebook.png" alt="Facebook" border="0"></a>
+                    </div>
+                    <div>
+                        <h1>+</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+     
+
+        <!-- footer Button Part -->
+        <div class="footb">
+        <div class="footbt">
+            <div><p>Privacy</p></div>
+            <div><p>Do Not Sell My Personal Information</p></div>
+            <div><p>Terms & Conditions</p></div>
+            <div><p>Interest-Based Ads</p></div>
+            <p>©2022 Nordstrom, Inc.</p>
+        </div>
+         <!-- <div id="footwid"></div> -->
+  </div>
+  <!-- Privacy    Do Not Sell My Personal Information     Terms & Conditions   Interest-Based Ads ©2022 Nordstrom, Inc. -->
 </body>
 </html>
+
+
+
+<script>
+   /*  let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+} */
+
+
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
