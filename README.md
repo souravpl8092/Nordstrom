@@ -38,7 +38,7 @@ Visit : https://jade-mandazi-3a9ec9.netlify.app/
 
 - ### Footer Page
 
-  <img src="https://i.imgur.com/i0o7YEs.png" />
+  <h1<img  src="https://i.imgur.com/i0o7YEs.png" />
 
 
 # Languages Used
@@ -73,6 +73,5 @@ Chakra UI (UI Styling Library) Styled-Components.
 ## Contributing
 
 We welcome contributions to the Reliance Digital Clone website. If you have an idea for a new feature or have found a bug, please open an issue in the repository.
-----
 
 <h1 align="center">✨Thank You✨</h1>
