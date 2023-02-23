@@ -38,7 +38,7 @@ Visit : https://jade-mandazi-3a9ec9.netlify.app/
 
 - ### Footer Page
 
-  <h1<img  src="https://i.imgur.com/i0o7YEs.png" />
+  <img  src="https://i.imgur.com/i0o7YEs.png" />
 
 
 # Languages Used
