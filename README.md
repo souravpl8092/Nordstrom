@@ -7,14 +7,11 @@
 
 ### Frontend Deployed URL 👉 [Click here](https://nordstroom.vercel.app/)
 
-### Backend API 👉 [Click here](https://enchanting-sunglasses-pig.cyclic.app/)
+### Backend API 👉 [Click here](https://tricky-rose-bell-bottoms.cyclic.app)
 
 <br/>
 
-
 <h1 align="center">🖥️ Tech Stack</h1>
-
-
 
  <div align="center"><h3 align="center">Frontend</h3>
 <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" align="center" alt="html5">
@@ -25,9 +22,6 @@
 <img src="https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white"  align="center" alt="redux" />
 <img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white"  align="center" alt="react-router" />
 </div>
-
-
-
 
  <div align="center"><h3 align="center">Backend</h3> 
 <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" align="center" alt="nodejs" />
@@ -55,11 +49,11 @@
 # Features
 
 - Account creation, login, signup and logout functionality.
-- JWT (JSON Web Token) Authentication and BcryptJS Password Hashing 
-- Cart Add and Remove Items 
+- JWT (JSON Web Token) Authentication and BcryptJS Password Hashing
+- Cart Add and Remove Items
 - User Authentication before placing an order
 - Data fetching from Backend
-<br/>
+  <br/>
 
 # Let's Dive into What we have made
 
@@ -67,7 +61,6 @@
 
 <h3>Go through the home page to know more about our website.</h3>
 <br/>
-
 
 <div align="center">
   <img width="80%" src="https://i.imgur.com/QFA8PeO.png" alt="Home page"/>
@@ -119,7 +112,6 @@
   </tr>
 </table>
 
-
 <br/>
 
 ## Cart Page :
@@ -141,7 +133,7 @@
 <br/>
 <br/>
 
- # Languages Used :
+# Languages Used :
 
 <ul dir="auto">
  <ol dir="auto">◉ JavaScript : 98.2%</ol>

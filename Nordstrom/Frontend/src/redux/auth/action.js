@@ -12,7 +12,7 @@ export const signup = (data) => async (dispatch) => {
   dispatch({ type: AUTH_SIGNUP_LOADING });
   try {
     const res = await axios.post(
-      "https://enchanting-sunglasses-pig.cyclic.app/user/register",
+      "https://tricky-rose-bell-bottoms.cyclic.app/user/register",
       data
     );
     dispatch({
@@ -35,7 +35,7 @@ export const signin = (data) => async (dispatch) => {
   dispatch({ type: AUTH_SIGNIN_LOADING });
   try {
     const res = await axios.post(
-      "https://enchanting-sunglasses-pig.cyclic.app/user/login",
+      "https://tricky-rose-bell-bottoms.cyclic.app/user/login",
       data
     );
     dispatch({

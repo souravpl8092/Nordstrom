@@ -15,7 +15,7 @@ export const getProducts = (query) => async (dispatch) => {
   dispatch({ type: GET_PRODUCTS_LOADING });
   try {
     const res = await axios.get(
-      `https://enchanting-sunglasses-pig.cyclic.app/product?${queries}`
+      `https://tricky-rose-bell-bottoms.cyclic.app/product?${queries}`
     );
     dispatch({
       type: GET_PRODUCTS_SUCCESS,
