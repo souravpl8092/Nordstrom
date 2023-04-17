@@ -1,7 +1,7 @@
 <h1 align="center">✨✨Welcome to Nordstrom_Clone✨✨</h1>
 
 <br/>
-<h3> Nordstrom is an American luxury department store chain that was founded in 1901 by John W. Nordstrom and Carl F. Wallin. Nordstrom offers a wide range of high-end clothing, shoes, accessories, beauty products, and home goods for men, women, and children. The company also operates Nordstrom Rack, which offers discounted designer clothing and accessories, and Trunk Club, a personal styling service for men.</h3>
+<h3 align="justify" width="80%"> Nordstrom is an American luxury department store chain that was founded in 1901 by John W. Nordstrom and Carl F. Wallin. Nordstrom offers a wide range of high-end clothing, shoes, accessories, beauty products, and home goods for men, women, and children. The company also operates Nordstrom Rack, which offers discounted designer clothing and accessories, and Trunk Club, a personal styling service for men.</h3>
 
 <br/>
 
